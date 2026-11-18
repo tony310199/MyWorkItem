@@ -6,8 +6,15 @@ namespace WorkItemApi.Repositories;
 
 public class WorkItemRepository(AppDbContext db) : IWorkItemRepository
 {
-    public async Task<List<WorkItem>> GetAllAsync(CancellationToken cancellationToken = default) =>
-        await db.WorkItems.Where(x => !x.IsDeleted).AsNoTracking().OrderByDescending(x => x.CreatedAt).ToListAsync(cancellationToken);
+    public async Task<List<WorkItem>> GetAllAsync(CancellationToken cancellationToken = default)
+    {
+        var workItems = await db.WorkItems
+            .Where(x => !x.IsDeleted)
+            .AsNoTracking()
+            .ToListAsync(cancellationToken);
+
+        return workItems.OrderByDescending(x => x.CreatedAt).ToList();
+    }
 
     public async Task<WorkItem?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default) =>
         await db.WorkItems.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id && !x.IsDeleted, cancellationToken);

@@ -15,11 +15,14 @@ public class StatusRepository(AppDbContext db) : IStatusRepository
         await db.UserWorkItemStatuses
             .FirstOrDefaultAsync(x => x.UserId == userId && x.WorkItemId == workItemId, cancellationToken);
 
-    public async Task<List<WorkItem>> GetAvailableWorkItemsAsync(CancellationToken cancellationToken = default) =>
-        await db.WorkItems.AsNoTracking()
+    public async Task<List<WorkItem>> GetAvailableWorkItemsAsync(CancellationToken cancellationToken = default)
+    {
+        var workItems = await db.WorkItems.AsNoTracking()
             .Where(x => !x.IsDeleted)
-            .OrderByDescending(x => x.CreatedAt)
             .ToListAsync(cancellationToken);
+
+        return workItems.OrderByDescending(x => x.CreatedAt).ToList();
+    }
 
     public async Task SaveStatusAsync(UserWorkItemStatus status, CancellationToken cancellationToken = default)
     {

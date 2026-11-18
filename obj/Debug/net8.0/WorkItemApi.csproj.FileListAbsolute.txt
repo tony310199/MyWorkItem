@@ -1,6 +1,5 @@
 C:\Users\88696\OneDrive\桌面\1124面試\bin\Debug\net8.0\appsettings.json
 C:\Users\88696\OneDrive\桌面\1124面試\bin\Debug\net8.0\WorkItemApi.staticwebassets.runtime.json
-C:\Users\88696\OneDrive\桌面\1124面試\bin\Debug\net8.0\WorkItemApi.exe
 C:\Users\88696\OneDrive\桌面\1124面試\bin\Debug\net8.0\WorkItemApi.deps.json
 C:\Users\88696\OneDrive\桌面\1124面試\bin\Debug\net8.0\WorkItemApi.runtimeconfig.json
 C:\Users\88696\OneDrive\桌面\1124面試\bin\Debug\net8.0\WorkItemApi.dll
@@ -143,3 +142,4 @@ C:\Users\88696\OneDrive\桌面\1124面試\obj\Debug\net8.0\scopedcss\scopedcss.c
 C:\Users\88696\OneDrive\桌面\1124面試\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\88696\OneDrive\桌面\1124面試\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\88696\OneDrive\桌面\1124面試\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\88696\OneDrive\桌面\1124面試\bin\Debug\net8.0\WorkItemApi.exe
